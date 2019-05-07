@@ -1,0 +1,50 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "Contains a batch of document write actions to send to the Azure Search index.",
+            "properties": {
+                "value": {
+                    "description": "The actions in the batch.",
+                    "items": {
+                        "additionalProperties": true,
+                        "description": "Represents an index action that operates on a document.",
+                        "properties": {
+                            "@search.action": {
+                                "description": "The operation to perform on a document in an indexing batch.",
+                                "enum": [
+                                    "upload",
+                                    "merge",
+                                    "mergeOrUpload",
+                                    "delete"
+                                ],
+                                "type": "string",
+                                "x-ms-client-name": "ActionType",
+                                "x-ms-enum": {
+                                    "name": "IndexActionType"
+                                },
+                                "nullable": false
+                            }
+                        },
+                        "type": "object"
+                    },
+                    "type": "array",
+                    "x-ms-client-name": "Actions"
+                }
+            },
+            "required": [
+                "value"
+            ],
+            "type": "object"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        },
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

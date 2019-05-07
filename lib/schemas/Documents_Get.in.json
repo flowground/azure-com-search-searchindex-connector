@@ -1,0 +1,24 @@
+{
+    "type": "object",
+    "properties": {
+        "key": {
+            "required": true,
+            "type": "string"
+        },
+        "_select": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        },
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

@@ -1,0 +1,94 @@
+{
+    "type": "object",
+    "properties": {
+        "search": {
+            "type": "string"
+        },
+        "facet": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "highlight": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "highlightPostTag": {
+            "type": "string"
+        },
+        "highlightPreTag": {
+            "type": "string"
+        },
+        "minimumCoverage": {
+            "type": "number",
+            "format": "double"
+        },
+        "queryType": {
+            "type": "string",
+            "enum": [
+                "simple",
+                "full"
+            ]
+        },
+        "scoringParameter": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "scoringProfile": {
+            "type": "string"
+        },
+        "searchFields": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "searchMode": {
+            "type": "string",
+            "enum": [
+                "any",
+                "all"
+            ]
+        },
+        "_count": {
+            "type": "boolean"
+        },
+        "_filter": {
+            "type": "string"
+        },
+        "_orderby": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "_select": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "_skip": {
+            "type": "integer",
+            "format": "int32"
+        },
+        "_top": {
+            "type": "integer",
+            "format": "int32"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        },
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

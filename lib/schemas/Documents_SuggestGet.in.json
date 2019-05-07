@@ -1,0 +1,60 @@
+{
+    "type": "object",
+    "properties": {
+        "search": {
+            "required": true,
+            "type": "string"
+        },
+        "suggesterName": {
+            "required": true,
+            "type": "string"
+        },
+        "fuzzy": {
+            "type": "boolean"
+        },
+        "highlightPostTag": {
+            "type": "string"
+        },
+        "highlightPreTag": {
+            "type": "string"
+        },
+        "minimumCoverage": {
+            "type": "number",
+            "format": "double"
+        },
+        "searchFields": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "_filter": {
+            "type": "string"
+        },
+        "_orderby": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "_select": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "_top": {
+            "type": "integer",
+            "format": "int32"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        },
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        }
+    }
+}

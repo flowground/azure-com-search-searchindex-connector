@@ -1,0 +1,69 @@
+{
+    "type": "object",
+    "properties": {
+        "requestBody": {
+            "description": "Parameters for fuzzy matching, and other autocomplete query behaviors.",
+            "properties": {
+                "autocompleteMode": {
+                    "description": "Specifies the mode for Autocomplete. The default is 'oneTerm'. Use 'twoTerms' to get shingles and 'oneTermWithContext' to use the current context while producing auto-completed terms.",
+                    "enum": [
+                        "oneTerm",
+                        "twoTerms",
+                        "oneTermWithContext"
+                    ],
+                    "type": "string",
+                    "x-ms-enum": {
+                        "modelAsString": false,
+                        "name": "AutocompleteMode"
+                    }
+                },
+                "fuzzy": {
+                    "description": "A value indicating whether to use fuzzy matching for the autocomplete query. Default is false. When set to true, the query will autocomplete terms even if there's a substituted or missing character in the search text. While this provides a better experience in some scenarios, it comes at a performance cost as fuzzy autocomplete queries are slower and consume more resources.",
+                    "type": "boolean",
+                    "x-ms-client-name": "UseFuzzyMatching"
+                },
+                "highlightPostTag": {
+                    "description": "A string tag that is appended to hit highlights. Must be set with highlightPreTag. If omitted, hit highlighting is disabled.",
+                    "type": "string"
+                },
+                "highlightPreTag": {
+                    "description": "A string tag that is prepended to hit highlights. Must be set with highlightPostTag. If omitted, hit highlighting is disabled.",
+                    "type": "string"
+                },
+                "minimumCoverage": {
+                    "description": "A number between 0 and 100 indicating the percentage of the index that must be covered by an autocomplete query in order for the query to be reported as a success. This parameter can be useful for ensuring search availability even for services with only one replica. The default is 80.",
+                    "format": "double",
+                    "type": "number"
+                },
+                "search": {
+                    "description": "The search text on which to base autocomplete results.",
+                    "type": "string",
+                    "x-ms-client-name": "SearchText"
+                },
+                "searchFields": {
+                    "description": "The comma-separated list of field names to consider when querying for auto-completed terms. Target fields must be included in the specified suggester.",
+                    "type": "string"
+                },
+                "suggesterName": {
+                    "description": "The name of the suggester as specified in the suggesters collection that's part of the index definition.",
+                    "type": "string"
+                },
+                "top": {
+                    "description": "The number of auto-completed terms to retrieve. This must be a value between 1 and 100. The default is 5.",
+                    "format": "int32",
+                    "type": "integer"
+                }
+            },
+            "type": "object"
+        },
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}

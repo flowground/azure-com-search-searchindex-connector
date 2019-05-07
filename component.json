@@ -1,0 +1,188 @@
+{
+    "title": "SearchIndexClient",
+    "description": "Client that can be used to query an Azure Search index and upload, merge, or delete documents.",
+    "docsUrl": "",
+    "url": "https://api.apis.guru/v2/specs/azure.com/search-searchindex/2017-11-11-Preview/swagger.json",
+    "envVars": {},
+    "credentials": {
+        "fields": {
+            "server": {
+                "label": "Server",
+                "viewClass": "SelectView",
+                "model": [
+                    "https://azure.local/",
+                    "https://{searchServiceName}.{searchDnsSuffix}/indexes('{indexName}')",
+                    "--- Custom URL"
+                ],
+                "required": true
+            },
+            "otherServer": {
+                "label": "Custom Server URL",
+                "viewClass": "TextFieldView"
+            }
+        }
+    },
+    "triggers": {
+        "startFlow": {
+            "main": "./lib/triggers/startFlow.js",
+            "type": "polling",
+            "title": "Start Flow",
+            "fields": {}
+        }
+    },
+    "actions": {
+        "Documents_SearchGet": {
+            "main": "./lib/actions/Documents_SearchGet.js",
+            "title": "Searches for documents in the Azure Search index.",
+            "description": "Searches for documents in the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_SearchGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_Get": {
+            "main": "./lib/actions/Documents_Get.js",
+            "title": "Retrieves a document from the Azure Search index.",
+            "description": "Retrieves a document from the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_Get.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_Count": {
+            "main": "./lib/actions/Documents_Count.js",
+            "title": "Queries the number of documents in the Azure Search index.",
+            "description": "Queries the number of documents in the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_Count.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_AutocompleteGet": {
+            "main": "./lib/actions/Documents_AutocompleteGet.js",
+            "title": "Autocompletes incomplete query terms based on input text and matching terms in the Azure Search index.",
+            "description": "Autocompletes incomplete query terms based on input text and matching terms in the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_AutocompleteGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_Index": {
+            "main": "./lib/actions/Documents_Index.js",
+            "title": "Sends a batch of document write actions to the Azure Search index.",
+            "description": "Sends a batch of document write actions to the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_Index.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_AutocompletePost": {
+            "main": "./lib/actions/Documents_AutocompletePost.js",
+            "title": "Autocompletes incomplete query terms based on input text and matching terms in the Azure Search index.",
+            "description": "Autocompletes incomplete query terms based on input text and matching terms in the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_AutocompletePost.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_SearchPost": {
+            "main": "./lib/actions/Documents_SearchPost.js",
+            "title": "Searches for documents in the Azure Search index.",
+            "description": "Searches for documents in the Azure Search index.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_SearchPost.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_SuggestPost": {
+            "main": "./lib/actions/Documents_SuggestPost.js",
+            "title": "Suggests documents in the Azure Search index that match the given partial query text.",
+            "description": "Suggests documents in the Azure Search index that match the given partial query text.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_SuggestPost.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        },
+        "Documents_SuggestGet": {
+            "main": "./lib/actions/Documents_SuggestGet.js",
+            "title": "Suggests documents in the Azure Search index that match the given partial query text.",
+            "description": "Suggests documents in the Azure Search index that match the given partial query text.",
+            "fields": {
+                "verbose": {
+                    "viewClass": "CheckBoxView",
+                    "label": "Debug this step (log more data)"
+                }
+            },
+            "metadata": {
+                "in": "./lib/schemas/Documents_SuggestGet.in.json",
+                "out": {
+                    "type": "object"
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+{
+    "type": "object",
+    "properties": {
+        "client_request_id": {
+            "required": false,
+            "type": "string",
+            "format": "uuid"
+        },
+        "api_version": {
+            "required": true,
+            "type": "string"
+        }
+    }
+}
